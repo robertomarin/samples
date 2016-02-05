@@ -1,0 +1,70 @@
+<canvas id="myCanvas" width="1400" height="1000" style="border:1px solid #000000;">
+</canvas>
+
+<script src="properties.js"></script>
+<script>
+
+var colors = [
+  "#ff8f00",
+  "#e53935",
+  "#64dd17",
+  "#26c6da",
+  "#ba68c8",
+  "#fbc02d",
+];
+
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+
+ctx.globalAlpha = 0.5;
+ctx.font = "48px colwel";
+
+ctx.fillStyle = colors[0];
+ctx.fillRect(0, 0, 500, 500);
+
+ctx.fillStyle = "#000000";
+ctx.fillText("Gode", 150, 250);
+
+ctx.fillStyle = colors[1];
+ctx.fillRect(400, 0, 600, 500);
+
+ctx.fillStyle = "#000000";
+ctx.fillText("Ruja", 650, 250);
+
+ctx.fillStyle = colors[2];
+ctx.fillRect(1000, 0, 400, 500);
+
+ctx.fillStyle = "#000000";
+ctx.fillText("Jaby", 1200, 250);
+
+ctx.fillStyle = colors[3];
+ctx.fillRect(0, 500, 500, 1200);
+
+ctx.fillStyle = "#000000";
+ctx.fillText("Scavy", 200, 750);
+
+ctx.fillStyle = colors[4];
+ctx.fillRect(500, 500, 400, 500);
+
+ctx.fillStyle = "#000000";
+ctx.fillText("Groola", 650, 750);
+
+ctx.fillStyle = colors[5];
+ctx.fillRect(900, 500, 500, 500);
+
+ctx.fillStyle = "#000000";
+ctx.fillText("Nova", 1100, 750);
+
+
+ctx.globalAlpha = 1;
+
+for (var i = 0; i < properties.properties.length; i++) {
+  var property = properties.properties[i];
+  ctx.beginPath();
+  ctx.arc(property.lat,property.long, 2, 0, Math.PI*2);
+  // ctx.fillStyle = colors[property.beds -1];
+  ctx.fillStyle = "#444444";
+  ctx.fill();
+}
+
+</script>
